@@ -91,8 +91,9 @@ public class FileController {
 
     }
 
-    @ResponseBody
+
     @RequestMapping (value = "delete/{id}")
+    @ResponseBody
     public ResponseEntity<Object> delete(@PathVariable Long id) {
         // 具体的删除逻辑
         if (id == null) {

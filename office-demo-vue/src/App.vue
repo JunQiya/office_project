@@ -20,7 +20,7 @@
           <template slot-scope="scope">
             <el-button type="primary" icon="el-icon-edit" size="mini" circle @click="edit(scope.row)">编辑</el-button>
             <el-button type="danger" icon="el-icon-delete" size="mini" circle @click="review(scope.row)">删除</el-button>
-            <el-button type="danger" icon="el-icon-delete" size="mini" circle
+            <el-button type="success" icon="el-icon-download" size="mini" circle
               @click="download(scope.row)">下载</el-button>
           </template>
         </el-table-column>
@@ -103,6 +103,8 @@ export default {
 
   }
 }
+
+
 </script>
 
 <style></style>
