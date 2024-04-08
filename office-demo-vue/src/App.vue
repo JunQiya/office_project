@@ -44,8 +44,6 @@ export default {
   methods: {
     upload() {
       let myfile = this.$refs.myfile
-      // console.log(myfile.files)
-      // let files = myfile.files
       let file = myfile.files[0]
       console.log(file)
       var forms = new FormData()
@@ -55,6 +53,10 @@ export default {
       forms.append('file', file)
       this.$http.post('http://172.20.10.5:8080/upload', forms, configs).then(res => {
         console.log(res)
+        // 刷新文件列表
+        if (res.status === 200) {
+          location.reload();
+        }
       })
     },
     edit(row) {
@@ -93,14 +95,13 @@ export default {
         // $eleForm.submit();
       })
     },
-    // 获取文件列表
+    // 获取文件列表，刷新文件列表
     getFileList() {
       this.$http.get('http://172.20.10.5:8080/filelist').then(res => {
         console.log(res)
         this.fileList = res.data
       })
     },
-
   }
 }
 
